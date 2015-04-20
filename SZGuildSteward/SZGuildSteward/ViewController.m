@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <SDWebImageDownloader.h>
 
 @interface ViewController ()
 
@@ -17,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"daota" ofType:@"txt"];
+    NSString *string = [[NSString alloc] initWithData:[[NSFileManager defaultManager] contentsAtPath:path] encoding:NSUTF8StringEncoding];
 }
 
 - (void)didReceiveMemoryWarning {

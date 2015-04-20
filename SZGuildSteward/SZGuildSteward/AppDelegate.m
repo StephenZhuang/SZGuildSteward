@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <CoreDataManager.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    CoreDataManager *manager = [CoreDataManager sharedManager];
+    manager.databaseName = @"Model";
+    manager.modelName = @"Model";
+    
+    
     return YES;
 }
 

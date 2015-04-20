@@ -15,6 +15,13 @@
 		77DD455E1AE4CF0E005DA571 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77DD455D1AE4CF0E005DA571 /* Images.xcassets */; };
 		77DD45611AE4CF0E005DA571 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77DD455F1AE4CF0E005DA571 /* LaunchScreen.xib */; };
 		77DD456D1AE4CF0E005DA571 /* SZGuildStewardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD456C1AE4CF0E005DA571 /* SZGuildStewardTests.m */; };
+		77DD45791AE4E23E005DA571 /* coverResource in Resources */ = {isa = PBXBuildFile; fileRef = 77DD45781AE4E23E005DA571 /* coverResource */; };
+		77DD457B1AE4E6D7005DA571 /* Heroes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77DD457A1AE4E6D7005DA571 /* Heroes.plist */; };
+		77DD45831AE4E86C005DA571 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45811AE4E86C005DA571 /* Model.xcdatamodeld */; };
+		77DD45861AE4EB18005DA571 /* SZHero.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45851AE4EB18005DA571 /* SZHero.m */; };
+		77DD45891AE4EB19005DA571 /* SZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45881AE4EB19005DA571 /* SZUser.m */; };
+		77DD458C1AE4EB19005DA571 /* SZSquad.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD458B1AE4EB19005DA571 /* SZSquad.m */; };
+		77DD45911AE4EDBB005DA571 /* GVUserDefaults+SZDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45901AE4EDBB005DA571 /* GVUserDefaults+SZDefault.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +49,17 @@
 		77DD45661AE4CF0E005DA571 /* SZGuildStewardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SZGuildStewardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DD456B1AE4CF0E005DA571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77DD456C1AE4CF0E005DA571 /* SZGuildStewardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZGuildStewardTests.m; sourceTree = "<group>"; };
+		77DD45781AE4E23E005DA571 /* coverResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = coverResource; sourceTree = "<group>"; };
+		77DD457A1AE4E6D7005DA571 /* Heroes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Heroes.plist; sourceTree = "<group>"; };
+		77DD45821AE4E86C005DA571 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		77DD45841AE4EB18005DA571 /* SZHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZHero.h; sourceTree = "<group>"; };
+		77DD45851AE4EB18005DA571 /* SZHero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZHero.m; sourceTree = "<group>"; };
+		77DD45871AE4EB19005DA571 /* SZUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZUser.h; sourceTree = "<group>"; };
+		77DD45881AE4EB19005DA571 /* SZUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZUser.m; sourceTree = "<group>"; };
+		77DD458A1AE4EB19005DA571 /* SZSquad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZSquad.h; sourceTree = "<group>"; };
+		77DD458B1AE4EB19005DA571 /* SZSquad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZSquad.m; sourceTree = "<group>"; };
+		77DD458F1AE4EDBB005DA571 /* GVUserDefaults+SZDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GVUserDefaults+SZDefault.h"; sourceTree = "<group>"; };
+		77DD45901AE4EDBB005DA571 /* GVUserDefaults+SZDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GVUserDefaults+SZDefault.m"; sourceTree = "<group>"; };
 		EFE181B585644E97034AC5D7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FBC808764CAF07C2FD584AEA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +106,10 @@
 		77DD454F1AE4CF0E005DA571 /* SZGuildSteward */ = {
 			isa = PBXGroup;
 			children = (
+				77DD458E1AE4EDA8005DA571 /* General */,
+				77DD458D1AE4ED93005DA571 /* Controllers */,
+				77DD45801AE4E836005DA571 /* model */,
+				77DD45781AE4E23E005DA571 /* coverResource */,
 				77DD45541AE4CF0E005DA571 /* AppDelegate.h */,
 				77DD45551AE4CF0E005DA571 /* AppDelegate.m */,
 				77DD45571AE4CF0E005DA571 /* ViewController.h */,
@@ -103,6 +125,7 @@
 		77DD45501AE4CF0E005DA571 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				77DD457A1AE4E6D7005DA571 /* Heroes.plist */,
 				77DD45511AE4CF0E005DA571 /* Info.plist */,
 				77DD45521AE4CF0E005DA571 /* main.m */,
 			);
@@ -124,6 +147,36 @@
 				77DD456B1AE4CF0E005DA571 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		77DD45801AE4E836005DA571 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				77DD45811AE4E86C005DA571 /* Model.xcdatamodeld */,
+				77DD458A1AE4EB19005DA571 /* SZSquad.h */,
+				77DD458B1AE4EB19005DA571 /* SZSquad.m */,
+				77DD45871AE4EB19005DA571 /* SZUser.h */,
+				77DD45881AE4EB19005DA571 /* SZUser.m */,
+				77DD45841AE4EB18005DA571 /* SZHero.h */,
+				77DD45851AE4EB18005DA571 /* SZHero.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		77DD458D1AE4ED93005DA571 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		77DD458E1AE4EDA8005DA571 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				77DD458F1AE4EDBB005DA571 /* GVUserDefaults+SZDefault.h */,
+				77DD45901AE4EDBB005DA571 /* GVUserDefaults+SZDefault.m */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 		A19C9FBDFDC735F418388D7A /* Pods */ = {
@@ -189,6 +242,7 @@
 		77DD45451AE4CF0E005DA571 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SZ;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Stephen Zhuang";
 				TargetAttributes = {
@@ -226,7 +280,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				77DD455C1AE4CF0E005DA571 /* Main.storyboard in Resources */,
+				77DD457B1AE4E6D7005DA571 /* Heroes.plist in Resources */,
 				77DD45611AE4CF0E005DA571 /* LaunchScreen.xib in Resources */,
+				77DD45791AE4E23E005DA571 /* coverResource in Resources */,
 				77DD455E1AE4CF0E005DA571 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,8 +335,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				77DD45591AE4CF0E005DA571 /* ViewController.m in Sources */,
+				77DD458C1AE4EB19005DA571 /* SZSquad.m in Sources */,
+				77DD45891AE4EB19005DA571 /* SZUser.m in Sources */,
 				77DD45561AE4CF0E005DA571 /* AppDelegate.m in Sources */,
 				77DD45531AE4CF0E005DA571 /* main.m in Sources */,
+				77DD45861AE4EB18005DA571 /* SZHero.m in Sources */,
+				77DD45911AE4EDBB005DA571 /* GVUserDefaults+SZDefault.m in Sources */,
+				77DD45831AE4E86C005DA571 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +550,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		77DD45811AE4E86C005DA571 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				77DD45821AE4E86C005DA571 /* Model.xcdatamodel */,
+			);
+			currentVersion = 77DD45821AE4E86C005DA571 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 77DD45451AE4CF0E005DA571 /* Project object */;
 }
