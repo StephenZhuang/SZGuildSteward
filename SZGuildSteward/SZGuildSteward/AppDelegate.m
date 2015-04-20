@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import <CoreDataManager.h>
+#import "SZHero.h"
+#import <NSManagedObject+ActiveRecord.h>
 
 @interface AppDelegate ()
 
@@ -22,7 +24,16 @@
     manager.databaseName = @"Model";
     manager.modelName = @"Model";
     
-    
+    NSArray *heroArray = [SZHero all];
+    if (heroArray.count == 0) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"Heroes" ofType:@"plist"];
+        NSArray *array = [[NSArray alloc] initWithContentsOfFile:path];
+        for (NSDictionary *dic in array) {
+            SZHero *hero = [SZHero create];
+            [hero update:dic];
+            [hero save];
+        }
+    }
     return YES;
 }
 
