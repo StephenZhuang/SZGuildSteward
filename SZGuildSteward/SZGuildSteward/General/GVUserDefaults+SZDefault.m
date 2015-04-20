@@ -9,5 +9,5 @@
 #import "GVUserDefaults+SZDefault.h"
 
 @implementation GVUserDefaults (SZDefault)
-
+@dynamic lastMaxID;
 @end

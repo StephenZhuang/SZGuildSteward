@@ -10,6 +10,8 @@
 #import <CoreDataManager.h>
 #import "SZHero.h"
 #import <NSManagedObject+ActiveRecord.h>
+#import "RDVTabBarController.h"
+#import "RDVTabBarItem.h"
 
 @interface AppDelegate ()
 
@@ -20,9 +22,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     CoreDataManager *manager = [CoreDataManager sharedManager];
-    manager.databaseName = @"Model";
-    manager.modelName = @"Model";
+    manager.databaseName = @"SZGuildSteward";
+    manager.modelName = @"SZGuildSteward";
     
     NSArray *heroArray = [SZHero all];
     if (heroArray.count == 0) {
@@ -34,7 +37,53 @@
             [hero save];
         }
     }
+    [self setupViewControllers];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)setupViewControllers
+{
+    NSArray *vcNameArr = @[@"Member",@"Direction"];
+    NSArray *titleArray = @[@"成员",  @"分路"];
+    NSMutableArray *vcArr = [[NSMutableArray alloc] init];
+    for (int i = 0; i < vcNameArr.count; i++) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:vcNameArr[i] bundle:nil];
+        UIViewController *vc = [storyboard instantiateInitialViewController];
+        [vc setTitle:titleArray[i]];
+        [vcArr addObject:vc];
+    }
+    
+    RDVTabBarController *tabBarController = [[RDVTabBarController alloc] init];
+    [tabBarController setViewControllers:vcArr];
+    [tabBarController setHidesBottomBarWhenPushed:YES];
+    
+    [self customizeTabBarForController:tabBarController];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:tabBarController];
+    self.window.rootViewController = nav;
+}
+
+- (void)customizeTabBarForController:(RDVTabBarController *)tabBarController {
+    
+    NSInteger index = 0;
+    for (RDVTabBarItem *item in [[tabBarController tabBar] items]) {
+        UIImage *finishedImage = [UIImage imageNamed:[NSString stringWithFormat:@"tabbar_%@_s",
+                                                      @(index+1)]];
+        UIImage *unfinishedImage = [UIImage imageNamed:[NSString stringWithFormat:@"tabbar_%@_n",
+                                                        @(index+1)]];
+        
+        UIImage *bgImg = [UIImage imageNamed:@"kong"];
+        [item setBackgroundSelectedImage:bgImg withUnselectedImage:bgImg];
+        //        UIImage *selectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_selected",
+        //                                                      [tabBarItemImages objectAtIndex:index]]];
+        //        UIImage *unselectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_normal",
+        //                                                        [tabBarItemImages objectAtIndex:index]]];
+        [item setFinishedSelectedImage:finishedImage withFinishedUnselectedImage:unfinishedImage];
+        //        [item setTitle:vcNameArr[index]];
+        
+        index++;
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -4,7 +4,6 @@ PODS:
   - ObjectiveRecord (1.5.0):
     - ObjectiveSugar
   - ObjectiveSugar (1.1.0)
-  - RDVTabBarController (1.1.9)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
@@ -13,7 +12,6 @@ DEPENDENCIES:
   - GVUserDefaults (~> 0.9.5)
   - MBProgressHUD (~> 0.9)
   - ObjectiveRecord (~> 1.5.0)
-  - RDVTabBarController (~> 1.1.9)
   - SDWebImage (~> 3.7.1)
 
 SPEC CHECKSUMS:
@@ -21,7 +19,6 @@ SPEC CHECKSUMS:
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   ObjectiveRecord: f290d17272e476b3c881300910e98284200c54b6
   ObjectiveSugar: a6a25f23d657c19df0a0b972466d5b5ca9f5295c
-  RDVTabBarController: 67794f7a7a37f8e32f046f85ac67d06ab92d624a
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
 
 COCOAPODS: 0.36.1

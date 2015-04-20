@@ -72,16 +72,23 @@
                                        NSFontAttributeName: [UIFont systemFontOfSize:12],
                                        NSForegroundColorAttributeName: [UIColor blackColor],
                                        };
+        _selectedTitleAttributes = @{
+                                       NSFontAttributeName: [UIFont systemFontOfSize:12],
+                                       NSForegroundColorAttributeName: [UIColor blackColor],
+                                       };
     } else {
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
         _unselectedTitleAttributes = @{
                                        UITextAttributeFont: [UIFont systemFontOfSize:12],
                                        UITextAttributeTextColor: [UIColor blackColor],
                                        };
+        _selectedTitleAttributes = @{
+                                       NSFontAttributeName: [UIFont systemFontOfSize:12],
+                                       NSForegroundColorAttributeName: [UIColor blackColor],
+                                       };
 #endif
     }
     
-    _selectedTitleAttributes = [_unselectedTitleAttributes copy];
     _badgeBackgroundColor = [UIColor redColor];
     _badgeTextColor = [UIColor whiteColor];
     _badgeTextFont = [UIFont systemFontOfSize:12];
@@ -131,7 +138,7 @@
         if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
             titleSize = [_title boundingRectWithSize:CGSizeMake(frameSize.width, 20)
                                                     options:NSStringDrawingUsesLineFragmentOrigin
-                                                 attributes:titleAttributes
+                                                 attributes:@{NSFontAttributeName: titleAttributes[NSFontAttributeName]}
                                                     context:nil].size;
             
             imageStartingY = roundf((frameSize.height - imageSize.height - titleSize.height) / 2);
@@ -151,7 +158,7 @@
         } else {
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
             titleSize = [_title sizeWithFont:titleAttributes[UITextAttributeFont]
-                           constrainedToSize:CGSizeMake(frameSize.width, 20)];
+                                  constrainedToSize:CGSizeMake(frameSize.width, 20)];
             UIOffset titleShadowOffset = [titleAttributes[UITextAttributeTextShadowOffset] UIOffsetValue];
             imageStartingY = roundf((frameSize.height - imageSize.height - titleSize.height) / 2);
             
@@ -181,7 +188,7 @@
     
     // Draw badges
     
-    if ([[self badgeValue] length]) {
+    if ([[self badgeValue] length] && [[self badgeValue] integerValue] > 0) {
         CGSize badgeSize = CGSizeZero;
         
         if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {

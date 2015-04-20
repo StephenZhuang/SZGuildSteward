@@ -99,12 +99,12 @@
 }
 
 - (void)setItems:(NSArray *)items {
-    for (RDVTabBarItem *item in _items) {
+    for (RDVTabBarItem *item in items) {
         [item removeFromSuperview];
     }
     
     _items = [items copy];
-    for (RDVTabBarItem *item in _items) {
+    for (RDVTabBarItem *item in items) {
         [item addTarget:self action:@selector(tabBarItemWasSelected:) forControlEvents:UIControlEventTouchDown];
         [self addSubview:item];
     }
@@ -161,12 +161,9 @@
 - (void)setTranslucent:(BOOL)translucent {
     _translucent = translucent;
     
-    CGFloat alpha = (translucent ? 0.9 : 1.0);
+//    CGFloat alpha = (translucent ? 0.9 : 1.0);
     
-    [_backgroundView setBackgroundColor:[UIColor colorWithRed:245/255.0
-                                                        green:245/255.0
-                                                         blue:245/255.0
-                                                        alpha:alpha]];
+    [_backgroundView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"tabbar_bg"]]];
 }
 
 @end

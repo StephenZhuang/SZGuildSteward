@@ -30,12 +30,6 @@
 #define COCOAPODS_VERSION_MINOR_ObjectiveSugar 1
 #define COCOAPODS_VERSION_PATCH_ObjectiveSugar 0
 
-// RDVTabBarController
-#define COCOAPODS_POD_AVAILABLE_RDVTabBarController
-#define COCOAPODS_VERSION_MAJOR_RDVTabBarController 1
-#define COCOAPODS_VERSION_MINOR_RDVTabBarController 1
-#define COCOAPODS_VERSION_PATCH_RDVTabBarController 9
-
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage
 #define COCOAPODS_VERSION_MAJOR_SDWebImage 3

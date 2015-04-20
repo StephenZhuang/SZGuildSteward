@@ -7,6 +7,7 @@
 //
 
 #import "SZUser.h"
+#import "SZSquad.h"
 
 
 @implementation SZUser
@@ -14,5 +15,6 @@
 @dynamic name;
 @dynamic userid;
 @dynamic totalCombat;
+@dynamic squads;
 
 @end

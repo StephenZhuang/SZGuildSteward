@@ -16,11 +16,17 @@
 		77DD456D1AE4CF0E005DA571 /* SZGuildStewardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD456C1AE4CF0E005DA571 /* SZGuildStewardTests.m */; };
 		77DD45791AE4E23E005DA571 /* coverResource in Resources */ = {isa = PBXBuildFile; fileRef = 77DD45781AE4E23E005DA571 /* coverResource */; };
 		77DD457B1AE4E6D7005DA571 /* Heroes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77DD457A1AE4E6D7005DA571 /* Heroes.plist */; };
-		77DD45831AE4E86C005DA571 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45811AE4E86C005DA571 /* Model.xcdatamodeld */; };
+		77DD45831AE4E86C005DA571 /* SZGuildSteward.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45811AE4E86C005DA571 /* SZGuildSteward.xcdatamodeld */; };
 		77DD45861AE4EB18005DA571 /* SZHero.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45851AE4EB18005DA571 /* SZHero.m */; };
-		77DD45891AE4EB19005DA571 /* SZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45881AE4EB19005DA571 /* SZUser.m */; };
 		77DD458C1AE4EB19005DA571 /* SZSquad.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD458B1AE4EB19005DA571 /* SZSquad.m */; };
 		77DD45911AE4EDBB005DA571 /* GVUserDefaults+SZDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45901AE4EDBB005DA571 /* GVUserDefaults+SZDefault.m */; };
+		77DD45971AE4F91F005DA571 /* Member.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DD45951AE4F91F005DA571 /* Member.storyboard */; };
+		77DD45991AE4F92D005DA571 /* Direction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DD45981AE4F92D005DA571 /* Direction.storyboard */; };
+		77DD459C1AE4FD2D005DA571 /* SZMembersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD459B1AE4FD2D005DA571 /* SZMembersTableViewController.m */; };
+		77DD45A51AE506D9005DA571 /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45A01AE506D9005DA571 /* RDVTabBar.m */; };
+		77DD45A61AE506D9005DA571 /* RDVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45A21AE506D9005DA571 /* RDVTabBarController.m */; };
+		77DD45A71AE506D9005DA571 /* RDVTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45A41AE506D9005DA571 /* RDVTabBarItem.m */; };
+		77DD45AD1AE50D75005DA571 /* SZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45AC1AE50D75005DA571 /* SZUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,15 +54,25 @@
 		77DD456C1AE4CF0E005DA571 /* SZGuildStewardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZGuildStewardTests.m; sourceTree = "<group>"; };
 		77DD45781AE4E23E005DA571 /* coverResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = coverResource; sourceTree = "<group>"; };
 		77DD457A1AE4E6D7005DA571 /* Heroes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Heroes.plist; sourceTree = "<group>"; };
-		77DD45821AE4E86C005DA571 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		77DD45821AE4E86C005DA571 /* SZGuildSteward.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SZGuildSteward.xcdatamodel; sourceTree = "<group>"; };
 		77DD45841AE4EB18005DA571 /* SZHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZHero.h; sourceTree = "<group>"; };
 		77DD45851AE4EB18005DA571 /* SZHero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZHero.m; sourceTree = "<group>"; };
-		77DD45871AE4EB19005DA571 /* SZUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZUser.h; sourceTree = "<group>"; };
-		77DD45881AE4EB19005DA571 /* SZUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZUser.m; sourceTree = "<group>"; };
 		77DD458A1AE4EB19005DA571 /* SZSquad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZSquad.h; sourceTree = "<group>"; };
 		77DD458B1AE4EB19005DA571 /* SZSquad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZSquad.m; sourceTree = "<group>"; };
 		77DD458F1AE4EDBB005DA571 /* GVUserDefaults+SZDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GVUserDefaults+SZDefault.h"; sourceTree = "<group>"; };
 		77DD45901AE4EDBB005DA571 /* GVUserDefaults+SZDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GVUserDefaults+SZDefault.m"; sourceTree = "<group>"; };
+		77DD45951AE4F91F005DA571 /* Member.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Member.storyboard; sourceTree = "<group>"; };
+		77DD45981AE4F92D005DA571 /* Direction.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Direction.storyboard; sourceTree = "<group>"; };
+		77DD459A1AE4FD2D005DA571 /* SZMembersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZMembersTableViewController.h; sourceTree = "<group>"; };
+		77DD459B1AE4FD2D005DA571 /* SZMembersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZMembersTableViewController.m; sourceTree = "<group>"; };
+		77DD459F1AE506D9005DA571 /* RDVTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBar.h; sourceTree = "<group>"; };
+		77DD45A01AE506D9005DA571 /* RDVTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBar.m; sourceTree = "<group>"; };
+		77DD45A11AE506D9005DA571 /* RDVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarController.h; sourceTree = "<group>"; };
+		77DD45A21AE506D9005DA571 /* RDVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarController.m; sourceTree = "<group>"; };
+		77DD45A31AE506D9005DA571 /* RDVTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarItem.h; sourceTree = "<group>"; };
+		77DD45A41AE506D9005DA571 /* RDVTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarItem.m; sourceTree = "<group>"; };
+		77DD45AB1AE50D75005DA571 /* SZUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZUser.h; sourceTree = "<group>"; };
+		77DD45AC1AE50D75005DA571 /* SZUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZUser.m; sourceTree = "<group>"; };
 		EFE181B585644E97034AC5D7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FBC808764CAF07C2FD584AEA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +119,7 @@
 		77DD454F1AE4CF0E005DA571 /* SZGuildSteward */ = {
 			isa = PBXGroup;
 			children = (
+				77DD459D1AE506D9005DA571 /* Vendors */,
 				77DD458E1AE4EDA8005DA571 /* General */,
 				77DD458D1AE4ED93005DA571 /* Controllers */,
 				77DD45801AE4E836005DA571 /* model */,
@@ -147,11 +164,11 @@
 		77DD45801AE4E836005DA571 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				77DD45811AE4E86C005DA571 /* Model.xcdatamodeld */,
+				77DD45811AE4E86C005DA571 /* SZGuildSteward.xcdatamodeld */,
+				77DD45AB1AE50D75005DA571 /* SZUser.h */,
+				77DD45AC1AE50D75005DA571 /* SZUser.m */,
 				77DD458A1AE4EB19005DA571 /* SZSquad.h */,
 				77DD458B1AE4EB19005DA571 /* SZSquad.m */,
-				77DD45871AE4EB19005DA571 /* SZUser.h */,
-				77DD45881AE4EB19005DA571 /* SZUser.m */,
 				77DD45841AE4EB18005DA571 /* SZHero.h */,
 				77DD45851AE4EB18005DA571 /* SZHero.m */,
 			);
@@ -161,6 +178,8 @@
 		77DD458D1AE4ED93005DA571 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				77DD45941AE4F91F005DA571 /* 成员 */,
+				77DD45961AE4F91F005DA571 /* 分路 */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -172,6 +191,45 @@
 				77DD45901AE4EDBB005DA571 /* GVUserDefaults+SZDefault.m */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		77DD45941AE4F91F005DA571 /* 成员 */ = {
+			isa = PBXGroup;
+			children = (
+				77DD45951AE4F91F005DA571 /* Member.storyboard */,
+				77DD459A1AE4FD2D005DA571 /* SZMembersTableViewController.h */,
+				77DD459B1AE4FD2D005DA571 /* SZMembersTableViewController.m */,
+			);
+			path = "成员";
+			sourceTree = "<group>";
+		};
+		77DD45961AE4F91F005DA571 /* 分路 */ = {
+			isa = PBXGroup;
+			children = (
+				77DD45981AE4F92D005DA571 /* Direction.storyboard */,
+			);
+			path = "分路";
+			sourceTree = "<group>";
+		};
+		77DD459D1AE506D9005DA571 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				77DD459E1AE506D9005DA571 /* RDVTabBarController */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		77DD459E1AE506D9005DA571 /* RDVTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				77DD459F1AE506D9005DA571 /* RDVTabBar.h */,
+				77DD45A01AE506D9005DA571 /* RDVTabBar.m */,
+				77DD45A11AE506D9005DA571 /* RDVTabBarController.h */,
+				77DD45A21AE506D9005DA571 /* RDVTabBarController.m */,
+				77DD45A31AE506D9005DA571 /* RDVTabBarItem.h */,
+				77DD45A41AE506D9005DA571 /* RDVTabBarItem.m */,
+			);
+			path = RDVTabBarController;
 			sourceTree = "<group>";
 		};
 		A19C9FBDFDC735F418388D7A /* Pods */ = {
@@ -276,8 +334,10 @@
 			files = (
 				77DD455C1AE4CF0E005DA571 /* Main.storyboard in Resources */,
 				77DD457B1AE4E6D7005DA571 /* Heroes.plist in Resources */,
+				77DD45971AE4F91F005DA571 /* Member.storyboard in Resources */,
 				77DD45611AE4CF0E005DA571 /* LaunchScreen.xib in Resources */,
 				77DD45791AE4E23E005DA571 /* coverResource in Resources */,
+				77DD45991AE4F92D005DA571 /* Direction.storyboard in Resources */,
 				77DD455E1AE4CF0E005DA571 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,13 +389,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77DD459C1AE4FD2D005DA571 /* SZMembersTableViewController.m in Sources */,
+				77DD45AD1AE50D75005DA571 /* SZUser.m in Sources */,
 				77DD458C1AE4EB19005DA571 /* SZSquad.m in Sources */,
-				77DD45891AE4EB19005DA571 /* SZUser.m in Sources */,
 				77DD45561AE4CF0E005DA571 /* AppDelegate.m in Sources */,
 				77DD45531AE4CF0E005DA571 /* main.m in Sources */,
 				77DD45861AE4EB18005DA571 /* SZHero.m in Sources */,
+				77DD45A61AE506D9005DA571 /* RDVTabBarController.m in Sources */,
+				77DD45A71AE506D9005DA571 /* RDVTabBarItem.m in Sources */,
 				77DD45911AE4EDBB005DA571 /* GVUserDefaults+SZDefault.m in Sources */,
-				77DD45831AE4E86C005DA571 /* Model.xcdatamodeld in Sources */,
+				77DD45831AE4E86C005DA571 /* SZGuildSteward.xcdatamodeld in Sources */,
+				77DD45A51AE506D9005DA571 /* RDVTabBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,13 +610,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		77DD45811AE4E86C005DA571 /* Model.xcdatamodeld */ = {
+		77DD45811AE4E86C005DA571 /* SZGuildSteward.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				77DD45821AE4E86C005DA571 /* Model.xcdatamodel */,
+				77DD45821AE4E86C005DA571 /* SZGuildSteward.xcdatamodel */,
 			);
-			currentVersion = 77DD45821AE4E86C005DA571 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
+			currentVersion = 77DD45821AE4E86C005DA571 /* SZGuildSteward.xcdatamodel */;
+			path = SZGuildSteward.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

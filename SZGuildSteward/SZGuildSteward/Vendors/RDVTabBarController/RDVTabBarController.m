@@ -56,14 +56,7 @@
     [self setSelectedIndex:[self selectedIndex]];
     
     [self setTabBarHidden:self.isTabBarHidden animated:NO];
-}
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return self.selectedViewController.preferredStatusBarStyle;
-}
-
-- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
-    return self.selectedViewController.preferredStatusBarUpdateAnimation;
+    [self.navigationController.navigationBar setHidden:YES];
 }
 
 - (NSUInteger)supportedInterfaceOrientations {
@@ -118,19 +111,9 @@
     [[[self selectedViewController] view] setFrame:[[self contentView] bounds]];
     [[self contentView] addSubview:[[self selectedViewController] view]];
     [[self selectedViewController] didMoveToParentViewController:self];
-    
-    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (void)setViewControllers:(NSArray *)viewControllers {
-    if (_viewControllers && _viewControllers.count) {
-        for (UIViewController *viewController in _viewControllers) {
-            [viewController willMoveToParentViewController:nil];
-            [viewController.view removeFromSuperview];
-            [viewController removeFromParentViewController];
-        }
-    }
-
     if (viewControllers && [viewControllers isKindOfClass:[NSArray class]]) {
         _viewControllers = [viewControllers copy];
         
