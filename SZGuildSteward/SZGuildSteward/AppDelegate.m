@@ -9,9 +9,6 @@
 #import "AppDelegate.h"
 #import <CoreDataManager.h>
 #import "SZHero.h"
-#import <NSManagedObject+ActiveRecord.h>
-#import "RDVTabBarController.h"
-#import "RDVTabBarItem.h"
 
 @interface AppDelegate ()
 

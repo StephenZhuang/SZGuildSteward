@@ -12,6 +12,7 @@
 #import <NSManagedObject+ActiveRecord.h>
 #import "GVUserDefaults+SZDefault.h"
 #import <NSArray+ObjectiveSugar.h>
+#import "SZUserSquadTableViewController.h"
 
 @interface SZMembersTableViewController ()<UIAlertViewDelegate>
 @property (nonatomic , strong) NSMutableArray *userArray;
@@ -28,6 +29,12 @@
     self.navigationItem.rightBarButtonItem = barbuttonItem;
     
     _userArray = [[SZUser allWithOrder:[NSSortDescriptor sortDescriptorWithKey:@"totalCombat" ascending:NO]] mutableCopy];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.rdv_tabBarController setTabBarHidden:NO animated:YES];
 }
 
 - (void)addMember
@@ -137,14 +144,21 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"squad"]) {
+        UITableViewCell *cell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        SZUser *user = [_userArray objectAtIndex:indexPath.row];
+        SZUserSquadTableViewController *vc = segue.destinationViewController;
+        vc.user = user;
+    }
 }
-*/
+
 
 @end
