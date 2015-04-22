@@ -86,7 +86,8 @@ static NSString * const reuseIdentifier = @"cell";
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         SZHero *hero = _heroArray[indexPath.row];
         // 耗时的操作
-        UIImage *image = [UIImage imageNamed:hero.imageName];
+        NSString *path = [[NSBundle mainBundle] pathForResource:hero.heroid ofType:@"jpg"];
+        UIImage *image = [UIImage imageWithContentsOfFile:path];
         dispatch_async(dispatch_get_main_queue(), ^{
             // 更新界面
             [cell.heorImage setImage:image];
