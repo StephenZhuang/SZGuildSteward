@@ -14,4 +14,9 @@
 #import <NSManagedObject+ActiveRecord.h>
 #import "RDVTabBarController.h"
 #import "RDVTabBarItem.h"
+#import "UITableView+SZLineHidden.h"
+
+
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define IOS8_OR_LATER (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
 #endif

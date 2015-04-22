@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "SZUser.h"
 
-@interface SZAddSquadTableViewController : UITableViewController
+@interface SZAddSquadTableViewController : UITableViewController<UIActionSheetDelegate,UITextFieldDelegate>
 {
     NSInteger direction;
+    NSInteger combat;
 }
 @property (nonatomic , strong) SZUser *user;
 @property (nonatomic , strong) NSMutableArray *heroArray;
-@property (nonatomic , copy) void (^successBlock)();
+@property (nonatomic , assign) BOOL isEdit;
+@property (nonatomic , strong) SZSquad *squad;
+@property (nonatomic , copy) void (^successBlock)(SZUser *user);
 @end

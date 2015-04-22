@@ -11,6 +11,8 @@
 #import "SZTextFieldTableViewCell.h"
 #import "SZSquadTableViewCell.h"
 #import "SZHero.h"
+#import "MBProgressHUD+ZXAdditon.h"
+#import "SZSquad.h"
 
 @interface SZAddSquadTableViewController ()
 
@@ -23,6 +25,8 @@
     
     self.title = @"添加队伍";
     
+    [self.tableView setExtrueLineHidden];
+    
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAction)];
     self.navigationItem.rightBarButtonItem = item;
     
@@ -31,10 +35,43 @@
     }
     
     direction = 0;
+    combat = 0;
 }
 
 - (void)doneAction
 {
+    [self.view endEditing:YES];
+    if (direction == 0) {
+        [MBProgressHUD showText:@"请选择分路" toView:self.view];
+        return;
+    }
+    
+    if (combat == 0) {
+        [MBProgressHUD showText:@"请填写战斗力" toView:self.view];
+        return;
+    }
+    
+    SZSquad *squad = [SZSquad create];
+    squad.user = _user;
+    squad.combat = combat;
+    squad.direction = direction;
+    
+    if (_heroArray.count > 0) {
+        NSMutableArray *arr = [[NSMutableArray alloc] init];
+        for (SZHero *hero in _heroArray) {
+            [arr addObject:hero.heroid];
+        }
+        NSString *heros = [arr componentsJoinedByString:@","];
+        squad.heroes = heros;
+    }
+    [squad save];
+    
+    _user.totalCombat += combat;
+//    [_user addSquadsObject:squad];
+    [_user save];
+    
+    !_successBlock?:_successBlock(_user);
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -71,7 +108,8 @@
     } else if (indexPath.row == 1) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
         
-        
+        NSArray *arr = @[@"未分配",@"上路",@"中路",@"下路"];
+        [cell.detailTextLabel setText:arr[direction]];
         
         return cell;
         
@@ -92,8 +130,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.view endEditing:YES];
     if (indexPath.row == 1) {
-        
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择分路" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"上路",@"中路",@"下路", nil];
+        [actionSheet showInView:self.view];
     } else if (indexPath.row == 2) {
         SZHeroPickerCollectionViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SZHeroPickerCollectionViewController"];
         vc.selectedHeroArray = _heroArray;
@@ -150,5 +190,22 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma -mark actionsheet delegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex < 3) {
+        direction = buttonIndex + 1;
+        [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
 
+#pragma  -mark textfield delegate
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    NSString *combatString = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    if (combatString.length == 0) {
+        combat = 0;
+    }
+    combat = combatString.integerValue;
+}
 @end

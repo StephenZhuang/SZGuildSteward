@@ -29,12 +29,15 @@
     self.navigationItem.rightBarButtonItem = barbuttonItem;
     
     _userArray = [[SZUser allWithOrder:[NSSortDescriptor sortDescriptorWithKey:@"totalCombat" ascending:NO]] mutableCopy];
+    [self.tableView setExtrueLineHidden];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.rdv_tabBarController setTabBarHidden:NO animated:YES];
+    _userArray = [[SZUser allWithOrder:[NSSortDescriptor sortDescriptorWithKey:@"totalCombat" ascending:NO]] mutableCopy];
+    [self.tableView reloadData];
 }
 
 - (void)addMember

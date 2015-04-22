@@ -81,6 +81,10 @@
 		7743BF6E1AE65156002B42AE /* tmp_55152cb7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7743BF271AE65156002B42AE /* tmp_55152cb7.jpg */; };
 		7743BF6F1AE65156002B42AE /* tmp_55152d9f.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7743BF281AE65156002B42AE /* tmp_55152d9f.jpg */; };
 		7743BF701AE65156002B42AE /* tmp_55153027.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7743BF291AE65156002B42AE /* tmp_55153027.jpg */; };
+		77A839821AE772CD00B93420 /* UITableView+SZLineHidden.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A839811AE772CD00B93420 /* UITableView+SZLineHidden.m */; };
+		77A839871AE7746A00B93420 /* MBProgressHUD+ZXAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A839851AE7746A00B93420 /* MBProgressHUD+ZXAdditon.m */; };
+		77A839881AE7746A00B93420 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 77A839861AE7746A00B93420 /* ProgressHUD.bundle */; };
+		77A8398B1AE7774D00B93420 /* UIImage+SZBundleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8398A1AE7774D00B93420 /* UIImage+SZBundleImage.m */; };
 		77DD45531AE4CF0E005DA571 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45521AE4CF0E005DA571 /* main.m */; };
 		77DD45561AE4CF0E005DA571 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45551AE4CF0E005DA571 /* AppDelegate.m */; };
 		77DD455C1AE4CF0E005DA571 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DD455A1AE4CF0E005DA571 /* Main.storyboard */; };
@@ -192,6 +196,13 @@
 		7743BF271AE65156002B42AE /* tmp_55152cb7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tmp_55152cb7.jpg; sourceTree = "<group>"; };
 		7743BF281AE65156002B42AE /* tmp_55152d9f.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tmp_55152d9f.jpg; sourceTree = "<group>"; };
 		7743BF291AE65156002B42AE /* tmp_55153027.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tmp_55153027.jpg; sourceTree = "<group>"; };
+		77A839801AE772CC00B93420 /* UITableView+SZLineHidden.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SZLineHidden.h"; sourceTree = "<group>"; };
+		77A839811AE772CD00B93420 /* UITableView+SZLineHidden.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SZLineHidden.m"; sourceTree = "<group>"; };
+		77A839841AE7746A00B93420 /* MBProgressHUD+ZXAdditon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+ZXAdditon.h"; sourceTree = "<group>"; };
+		77A839851AE7746A00B93420 /* MBProgressHUD+ZXAdditon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+ZXAdditon.m"; sourceTree = "<group>"; };
+		77A839861AE7746A00B93420 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		77A839891AE7774D00B93420 /* UIImage+SZBundleImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SZBundleImage.h"; sourceTree = "<group>"; };
+		77A8398A1AE7774D00B93420 /* UIImage+SZBundleImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SZBundleImage.m"; sourceTree = "<group>"; };
 		77DD454D1AE4CF0E005DA571 /* SZGuildSteward.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SZGuildSteward.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DD45511AE4CF0E005DA571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77DD45521AE4CF0E005DA571 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -333,6 +344,16 @@
 			path = coverResource;
 			sourceTree = "<group>";
 		};
+		77A839831AE7746A00B93420 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				77A839841AE7746A00B93420 /* MBProgressHUD+ZXAdditon.h */,
+				77A839851AE7746A00B93420 /* MBProgressHUD+ZXAdditon.m */,
+				77A839861AE7746A00B93420 /* ProgressHUD.bundle */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		77DD45441AE4CF0E005DA571 = {
 			isa = PBXGroup;
 			children = (
@@ -425,8 +446,13 @@
 		77DD458E1AE4EDA8005DA571 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				77A839891AE7774D00B93420 /* UIImage+SZBundleImage.h */,
+				77A8398A1AE7774D00B93420 /* UIImage+SZBundleImage.m */,
+				77A839831AE7746A00B93420 /* MBProgressHUD */,
 				77DD458F1AE4EDBB005DA571 /* GVUserDefaults+SZDefault.h */,
 				77DD45901AE4EDBB005DA571 /* GVUserDefaults+SZDefault.m */,
+				77A839801AE772CC00B93420 /* UITableView+SZLineHidden.h */,
+				77A839811AE772CD00B93420 /* UITableView+SZLineHidden.m */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -658,6 +684,7 @@
 				7743BF381AE65156002B42AE /* tmp_539a998e.jpg in Resources */,
 				77DD455E1AE4CF0E005DA571 /* Images.xcassets in Resources */,
 				7743BF2F1AE65156002B42AE /* 27.jpg in Resources */,
+				77A839881AE7746A00B93420 /* ProgressHUD.bundle in Resources */,
 				7743BF5E1AE65156002B42AE /* tmp_541d45ea.jpg in Resources */,
 				7743BF511AE65156002B42AE /* tmp_53ae793b.jpg in Resources */,
 				7743BF351AE65156002B42AE /* tmp_539a9761.jpg in Resources */,
@@ -720,9 +747,12 @@
 				77DD45B01AE51096005DA571 /* SZUserSquadTableViewController.m in Sources */,
 				77DD459C1AE4FD2D005DA571 /* SZMembersTableViewController.m in Sources */,
 				7743BEDD1AE64B96002B42AE /* SZHeroPickerCollectionViewController.m in Sources */,
+				77A839871AE7746A00B93420 /* MBProgressHUD+ZXAdditon.m in Sources */,
 				77DD45AD1AE50D75005DA571 /* SZUser.m in Sources */,
+				77A839821AE772CD00B93420 /* UITableView+SZLineHidden.m in Sources */,
 				77DD458C1AE4EB19005DA571 /* SZSquad.m in Sources */,
 				77DD45561AE4CF0E005DA571 /* AppDelegate.m in Sources */,
+				77A8398B1AE7774D00B93420 /* UIImage+SZBundleImage.m in Sources */,
 				77E95E141AE74E8D0016E59C /* SZTextFieldTableViewCell.m in Sources */,
 				77DD45531AE4CF0E005DA571 /* main.m in Sources */,
 				7743BEE01AE64C2A002B42AE /* SZHeroCollectionViewCell.m in Sources */,

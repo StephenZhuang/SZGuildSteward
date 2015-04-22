@@ -11,7 +11,7 @@
 #import "SZAddSquadTableViewController.h"
 
 @interface SZUserSquadTableViewController ()
-
+@property (nonatomic , strong) NSMutableArray *squadArray;
 @end
 
 @implementation SZUserSquadTableViewController
@@ -23,6 +23,19 @@
     
     UIBarButtonItem *barbuttonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addSquad)];
     self.navigationItem.rightBarButtonItem = barbuttonItem;
+    
+    [self.tableView setExtrueLineHidden];
+    _squadArray = [[NSMutableArray alloc] init];
+    [self loadData];
+}
+
+- (void)loadData
+{
+    [_squadArray removeAllObjects];
+    for (SZSquad *squad in _user.squads) {
+        [_squadArray addObject:squad];
+    }
+    [self.tableView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -50,22 +63,22 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return _user.squads.count;
+    return _squadArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SZSquad *squad = [_user.squads objectAtIndex:indexPath.row];
+    SZSquad *squad = [_squadArray objectAtIndex:indexPath.row];
     if (squad.heroes.length > 0) {
-        return 45;
-    } else {
         return 105;
+    } else {
+        return 45;
     }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SZSquad *squad = [_user.squads objectAtIndex:indexPath.row];
+    SZSquad *squad = [_squadArray objectAtIndex:indexPath.row];
     if (squad.heroes.length > 0) {
         SZSquadTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageCell"];
         [cell.titleLabel setText:_user.name];
@@ -106,7 +119,11 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        SZSquad *squad = [_squadArray objectAtIndex:indexPath.row];
+        [squad delete];
+        _user.totalCombat -= squad.combat;
+        [_user save];
+        [self loadData];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
@@ -127,6 +144,10 @@
 }
 */
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 #pragma mark - Navigation
 
@@ -137,8 +158,10 @@
     if ([segue.identifier isEqualToString:@"add"]) {
         SZAddSquadTableViewController *vc = segue.destinationViewController;
         vc.user = _user;
-        vc.successBlock = ^(void) {
-            
+        __weak __typeof(&*self)weakSelf = self;
+        vc.successBlock = ^(SZUser *user) {
+            weakSelf.user = user;
+            [weakSelf loadData];
         };
     }
 }
