@@ -147,7 +147,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         SZTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SZTextFieldTableViewCell"];
-        [cell.textField setText:[NSString stringWithFormat:@"%@",@(combat)]];
+        [cell.textField setText:[NSString stringWithFormat:@"%@",combat==0?@"":@(combat)]];
         return cell;
     } else if (indexPath.row == 1) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];

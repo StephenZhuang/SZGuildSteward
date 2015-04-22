@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		285728499F4866EC9D33B798 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D598E42B7E0932EE6C2DEEB /* libPods.a */; };
+		772E6F061AE79264002AFCFB /* SZDirectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772E6F051AE79264002AFCFB /* SZDirectionViewController.m */; };
+		772E6F091AE79749002AFCFB /* SZDirectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772E6F081AE79749002AFCFB /* SZDirectionDetailViewController.m */; };
 		7743BEDD1AE64B96002B42AE /* SZHeroPickerCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7743BEDC1AE64B96002B42AE /* SZHeroPickerCollectionViewController.m */; };
 		7743BEE01AE64C2A002B42AE /* SZHeroCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7743BEDF1AE64C2A002B42AE /* SZHeroCollectionViewCell.m */; };
 		7743BF2A1AE65156002B42AE /* 11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7743BEE31AE65156002B42AE /* 11.jpg */; };
@@ -121,6 +123,10 @@
 
 /* Begin PBXFileReference section */
 		1D598E42B7E0932EE6C2DEEB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		772E6F041AE79264002AFCFB /* SZDirectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZDirectionViewController.h; sourceTree = "<group>"; };
+		772E6F051AE79264002AFCFB /* SZDirectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZDirectionViewController.m; sourceTree = "<group>"; };
+		772E6F071AE79749002AFCFB /* SZDirectionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZDirectionDetailViewController.h; sourceTree = "<group>"; };
+		772E6F081AE79749002AFCFB /* SZDirectionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZDirectionDetailViewController.m; sourceTree = "<group>"; };
 		7743BEDB1AE64B96002B42AE /* SZHeroPickerCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZHeroPickerCollectionViewController.h; sourceTree = "<group>"; };
 		7743BEDC1AE64B96002B42AE /* SZHeroPickerCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZHeroPickerCollectionViewController.m; sourceTree = "<group>"; };
 		7743BEDE1AE64C2A002B42AE /* SZHeroCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZHeroCollectionViewCell.h; sourceTree = "<group>"; };
@@ -478,6 +484,10 @@
 			isa = PBXGroup;
 			children = (
 				77DD45981AE4F92D005DA571 /* Direction.storyboard */,
+				772E6F041AE79264002AFCFB /* SZDirectionViewController.h */,
+				772E6F051AE79264002AFCFB /* SZDirectionViewController.m */,
+				772E6F071AE79749002AFCFB /* SZDirectionDetailViewController.h */,
+				772E6F081AE79749002AFCFB /* SZDirectionDetailViewController.m */,
 			);
 			path = "分路";
 			sourceTree = "<group>";
@@ -748,6 +758,7 @@
 				77DD459C1AE4FD2D005DA571 /* SZMembersTableViewController.m in Sources */,
 				7743BEDD1AE64B96002B42AE /* SZHeroPickerCollectionViewController.m in Sources */,
 				77A839871AE7746A00B93420 /* MBProgressHUD+ZXAdditon.m in Sources */,
+				772E6F061AE79264002AFCFB /* SZDirectionViewController.m in Sources */,
 				77DD45AD1AE50D75005DA571 /* SZUser.m in Sources */,
 				77A839821AE772CD00B93420 /* UITableView+SZLineHidden.m in Sources */,
 				77DD458C1AE4EB19005DA571 /* SZSquad.m in Sources */,
@@ -763,6 +774,7 @@
 				77DD45B41AE51DF7005DA571 /* SZSquadTableViewCell.m in Sources */,
 				77DD45831AE4E86C005DA571 /* SZGuildSteward.xcdatamodeld in Sources */,
 				77DD45A51AE506D9005DA571 /* RDVTabBar.m in Sources */,
+				772E6F091AE79749002AFCFB /* SZDirectionDetailViewController.m in Sources */,
 				77DD45B71AE521FA005DA571 /* SZAddSquadTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
