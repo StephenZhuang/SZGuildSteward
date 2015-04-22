@@ -163,7 +163,9 @@
             UIImageView *imageView = (UIImageView *)[cell.contentView viewWithTag:i+1];
             if (i < _heroArray.count) {
                 SZHero *hero = [_heroArray objectAtIndex:i];
-                [imageView setImage:[UIImage imageNamed:hero.imageName]];
+                NSString *path = [[NSBundle mainBundle] pathForResource:hero.heroid ofType:@"jpg"];
+                UIImage *image = [UIImage imageWithContentsOfFile:path];
+                [imageView setImage:image];
             } else {
                 [imageView setImage:[UIImage new]];
             }
