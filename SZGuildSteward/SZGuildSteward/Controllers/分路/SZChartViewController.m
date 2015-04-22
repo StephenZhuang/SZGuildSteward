@@ -17,6 +17,9 @@
     NSArray *arr = @[@"未分配",@"上路",@"中路",@"下路"];
     self.title = [NSString stringWithFormat:@"%@战力分布",arr[_direction]];
     [self loadData];
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showAction)];
+    self.navigationItem.rightBarButtonItem = item;
 }
 
 - (void)loadData
@@ -36,5 +39,30 @@
     [barChart setYValues:@[ @(combatBelow3w),@(combatAbove3w), @(combatAbove3w5),@(combatAbove4w)]];
     [barChart strokeChart];
     [self.view addSubview:barChart];
+}
+
+- (void)showAction
+{
+    UIImage *image = [self getImage];
+    NSArray *activityItems = @[image];
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    activityController.completionWithItemsHandler = ^(NSString *activityType, BOOL completed, NSArray *returnedItems, NSError *activityError) {
+        if (completed) {
+            
+        }
+    };
+    [self presentViewController:activityController
+                       animated:YES completion:nil];
+}
+
+- (UIImage *)getImage {
+    
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(SCREEN_WIDTH, self.view.frame.size.height), NO, 1.0);  //NO，YES 控制是否透明
+    [self.navigationController.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    // 生成后的image
+    
+    return image;
 }
 @end
