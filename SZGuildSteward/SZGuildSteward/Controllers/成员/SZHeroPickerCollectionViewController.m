@@ -21,21 +21,35 @@ static NSString * const reuseIdentifier = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"选择阵容";
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
     
     // Do any additional setup after loading the view.
     _heroArray = [SZHero all];
-    [self.collectionView reloadData];
-    
+
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAction)];
     self.navigationItem.rightBarButtonItem = item;
+    
+    self.collectionView.allowsMultipleSelection = YES;
+    
+    if (!_selectedHeroArray) {
+        _selectedHeroArray = [[NSMutableArray alloc] init];
+    } else {
+        for (SZHero *hero in _selectedHeroArray) {
+            NSInteger index = [_heroArray indexOfObject:hero];
+            if (index != NSNotFound) {
+                [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionNone];
+            }
+        }
+    }
 }
 
 - (void)doneAction
 {
+    [_selectedHeroArray removeAllObjects];
+    NSArray *array = [self.collectionView indexPathsForSelectedItems];
+    for (NSIndexPath *indexPath in array) {
+        [_selectedHeroArray addObject:[_heroArray objectAtIndex:indexPath.row]];
+    }
+    !_selectedBlock?:_selectedBlock(_selectedHeroArray);
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -69,8 +83,15 @@ static NSString * const reuseIdentifier = @"cell";
     SZHeroCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
-    SZHero *hero = _heroArray[indexPath.row];
-    [cell.heorImage setImage:[UIImage imageNamed:hero.imageName]];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        SZHero *hero = _heroArray[indexPath.row];
+        // 耗时的操作
+        UIImage *image = [UIImage imageNamed:hero.imageName];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // 更新界面
+            [cell.heorImage setImage:image];
+        });
+    });
     return cell;
 }
 
@@ -83,12 +104,27 @@ static NSString * const reuseIdentifier = @"cell";
 }
 */
 
-/*
+
 // Uncomment this method to specify if the specified item should be selected
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSArray *array = [collectionView indexPathsForSelectedItems];
+    NSInteger index = [array indexOfObject:indexPath];
+    if (index == NSNotFound) {
+        if (array.count >= 5) {
+            return NO;
+        } else {
+            return YES;
+        }
+    } else {
+        return YES;
+    }
     return YES;
 }
-*/
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+
+}
 
 /*
 // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item

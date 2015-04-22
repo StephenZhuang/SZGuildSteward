@@ -8,6 +8,9 @@
 
 #import "SZAddSquadTableViewController.h"
 #import "SZHeroPickerCollectionViewController.h"
+#import "SZTextFieldTableViewCell.h"
+#import "SZSquadTableViewCell.h"
+#import "SZHero.h"
 
 @interface SZAddSquadTableViewController ()
 
@@ -18,11 +21,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.title = @"添加队伍";
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAction)];
+    self.navigationItem.rightBarButtonItem = item;
+    
+    if (!_heroArray) {
+        _heroArray = [[NSMutableArray alloc] init];
+    }
+    
+    direction = 0;
+}
+
+- (void)doneAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,20 +55,55 @@
     return 3;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 2) {
+        return 85;
+    } else {
+        return 45;
+    }
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    
-    // Configure the cell...
-    
-    return cell;
+    if (indexPath.row == 0) {
+        SZTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SZTextFieldTableViewCell"];
+        return cell;
+    } else if (indexPath.row == 1) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+        
+        
+        
+        return cell;
+        
+    } else {
+        SZSquadTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageCell"];
+        for (int i = 0; i < 5; i++) {
+            UIImageView *imageView = (UIImageView *)[cell.contentView viewWithTag:i+1];
+            if (i < _heroArray.count) {
+                SZHero *hero = [_heroArray objectAtIndex:i];
+                [imageView setImage:[UIImage imageNamed:hero.imageName]];
+            } else {
+                [imageView setImage:[UIImage imageNamed:@""]];
+            }
+        }
+        return cell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SZHeroPickerCollectionViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SZHeroPickerCollectionViewController"];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self presentViewController:nav animated:YES completion:nil];
+    if (indexPath.row == 1) {
+        
+    } else if (indexPath.row == 2) {
+        SZHeroPickerCollectionViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SZHeroPickerCollectionViewController"];
+        vc.selectedHeroArray = _heroArray;
+        vc.selectedBlock = ^(NSMutableArray *array) {
+            _heroArray = array;
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+        };
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self presentViewController:nav animated:YES completion:nil];
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

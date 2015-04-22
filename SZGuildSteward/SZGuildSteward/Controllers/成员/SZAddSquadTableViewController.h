@@ -10,5 +10,10 @@
 #import "SZUser.h"
 
 @interface SZAddSquadTableViewController : UITableViewController
+{
+    NSInteger direction;
+}
 @property (nonatomic , strong) SZUser *user;
+@property (nonatomic , strong) NSMutableArray *heroArray;
+@property (nonatomic , copy) void (^successBlock)();
 @end

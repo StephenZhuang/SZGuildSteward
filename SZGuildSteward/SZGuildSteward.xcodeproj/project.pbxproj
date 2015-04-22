@@ -102,6 +102,7 @@
 		77DD45B01AE51096005DA571 /* SZUserSquadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45AF1AE51096005DA571 /* SZUserSquadTableViewController.m */; };
 		77DD45B41AE51DF7005DA571 /* SZSquadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45B31AE51DF7005DA571 /* SZSquadTableViewCell.m */; };
 		77DD45B71AE521FA005DA571 /* SZAddSquadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45B61AE521FA005DA571 /* SZAddSquadTableViewController.m */; };
+		77E95E141AE74E8D0016E59C /* SZTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E95E131AE74E8D0016E59C /* SZTextFieldTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -229,6 +230,8 @@
 		77DD45B31AE51DF7005DA571 /* SZSquadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZSquadTableViewCell.m; sourceTree = "<group>"; };
 		77DD45B51AE521FA005DA571 /* SZAddSquadTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZAddSquadTableViewController.h; sourceTree = "<group>"; };
 		77DD45B61AE521FA005DA571 /* SZAddSquadTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZAddSquadTableViewController.m; sourceTree = "<group>"; };
+		77E95E121AE74E8D0016E59C /* SZTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		77E95E131AE74E8D0016E59C /* SZTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZTextFieldTableViewCell.m; sourceTree = "<group>"; };
 		EFE181B585644E97034AC5D7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FBC808764CAF07C2FD584AEA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -440,10 +443,7 @@
 				77DD45B61AE521FA005DA571 /* SZAddSquadTableViewController.m */,
 				7743BEDB1AE64B96002B42AE /* SZHeroPickerCollectionViewController.h */,
 				7743BEDC1AE64B96002B42AE /* SZHeroPickerCollectionViewController.m */,
-				77DD45B21AE51DF7005DA571 /* SZSquadTableViewCell.h */,
-				77DD45B31AE51DF7005DA571 /* SZSquadTableViewCell.m */,
-				7743BEDE1AE64C2A002B42AE /* SZHeroCollectionViewCell.h */,
-				7743BEDF1AE64C2A002B42AE /* SZHeroCollectionViewCell.m */,
+				77E95E111AE74E5E0016E59C /* cell */,
 			);
 			path = "成员";
 			sourceTree = "<group>";
@@ -475,6 +475,19 @@
 				77DD45A41AE506D9005DA571 /* RDVTabBarItem.m */,
 			);
 			path = RDVTabBarController;
+			sourceTree = "<group>";
+		};
+		77E95E111AE74E5E0016E59C /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				77DD45B21AE51DF7005DA571 /* SZSquadTableViewCell.h */,
+				77DD45B31AE51DF7005DA571 /* SZSquadTableViewCell.m */,
+				7743BEDE1AE64C2A002B42AE /* SZHeroCollectionViewCell.h */,
+				7743BEDF1AE64C2A002B42AE /* SZHeroCollectionViewCell.m */,
+				77E95E121AE74E8D0016E59C /* SZTextFieldTableViewCell.h */,
+				77E95E131AE74E8D0016E59C /* SZTextFieldTableViewCell.m */,
+			);
+			name = cell;
 			sourceTree = "<group>";
 		};
 		A19C9FBDFDC735F418388D7A /* Pods */ = {
@@ -710,6 +723,7 @@
 				77DD45AD1AE50D75005DA571 /* SZUser.m in Sources */,
 				77DD458C1AE4EB19005DA571 /* SZSquad.m in Sources */,
 				77DD45561AE4CF0E005DA571 /* AppDelegate.m in Sources */,
+				77E95E141AE74E8D0016E59C /* SZTextFieldTableViewCell.m in Sources */,
 				77DD45531AE4CF0E005DA571 /* main.m in Sources */,
 				7743BEE01AE64C2A002B42AE /* SZHeroCollectionViewCell.m in Sources */,
 				77DD45861AE4EB18005DA571 /* SZHero.m in Sources */,

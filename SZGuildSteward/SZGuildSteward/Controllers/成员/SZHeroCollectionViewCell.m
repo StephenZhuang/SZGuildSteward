@@ -9,5 +9,9 @@
 #import "SZHeroCollectionViewCell.h"
 
 @implementation SZHeroCollectionViewCell
-
+- (void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    [self.selectButton setSelected:selected];
+}
 @end

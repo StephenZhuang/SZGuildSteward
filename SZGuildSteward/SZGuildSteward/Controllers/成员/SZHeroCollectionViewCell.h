@@ -10,4 +10,5 @@
 
 @interface SZHeroCollectionViewCell : UICollectionViewCell
 @property (nonatomic , weak) IBOutlet UIImageView *heorImage;
+@property (nonatomic , weak) IBOutlet UIButton *selectButton;
 @end

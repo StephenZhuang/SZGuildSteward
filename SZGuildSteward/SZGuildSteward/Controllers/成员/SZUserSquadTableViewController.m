@@ -53,6 +53,16 @@
     return _user.squads.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SZSquad *squad = [_user.squads objectAtIndex:indexPath.row];
+    if (squad.heroes.length > 0) {
+        return 45;
+    } else {
+        return 105;
+    }
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SZSquad *squad = [_user.squads objectAtIndex:indexPath.row];
@@ -127,6 +137,9 @@
     if ([segue.identifier isEqualToString:@"add"]) {
         SZAddSquadTableViewController *vc = segue.destinationViewController;
         vc.user = _user;
+        vc.successBlock = ^(void) {
+            
+        };
     }
 }
 

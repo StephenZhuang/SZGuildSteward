@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SZHeroPickerCollectionViewController : UICollectionViewController
-
+@property (nonatomic , strong) NSMutableArray *selectedHeroArray;
+@property (nonatomic , copy) void (^selectedBlock)(NSMutableArray *array);
 @end
