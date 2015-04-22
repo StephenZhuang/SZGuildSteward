@@ -176,10 +176,31 @@
                             <outlet property="delegate" destination="VGf-NR-euf" id="d8B-RY-47X"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="0wA-RA-jrd" kind="show" identifier="chart" id="dqD-5S-dvI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wn5-bF-nEU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1408" y="350"/>
+        </scene>
+        <!--Chart View Controller-->
+        <scene sceneID="H0b-qM-V08">
+            <objects>
+                <viewController storyboardIdentifier="SZChartViewController" id="0wA-RA-jrd" customClass="SZChartViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p28-qh-cUu"/>
+                        <viewControllerLayoutGuide type="bottom" id="1L8-Ql-yU9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Ge-4b-IcM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yWC-G4-vv6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1408" y="1039"/>
         </scene>
     </scenes>
 </document>

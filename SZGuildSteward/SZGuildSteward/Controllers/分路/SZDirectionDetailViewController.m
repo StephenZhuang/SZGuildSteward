@@ -12,6 +12,7 @@
 #import "SZHero.h"
 #import "SZUser.h"
 #import "SZAddSquadTableViewController.h"
+#import "SZChartViewController.h"
 
 @implementation SZDirectionDetailViewController
 - (void)viewDidLoad
@@ -21,6 +22,14 @@
     self.title = arr[_direction];
     [self loadData];
     [self.tableView setExtrueLineHidden];
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(chart)];
+    self.navigationItem.rightBarButtonItem = item;
+}
+
+- (void)chart
+{
+    [self performSegueWithIdentifier:@"chart" sender:nil];
 }
 
 - (void)loadData
@@ -97,5 +106,13 @@
     };
     [self.navigationController pushViewController:vc animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"chart"]) {
+        SZChartViewController *vc = segue.destinationViewController;
+        vc.direction = _direction;
+    }
 }
 @end

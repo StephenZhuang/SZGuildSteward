@@ -87,6 +87,7 @@
 		77A839871AE7746A00B93420 /* MBProgressHUD+ZXAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A839851AE7746A00B93420 /* MBProgressHUD+ZXAdditon.m */; };
 		77A839881AE7746A00B93420 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 77A839861AE7746A00B93420 /* ProgressHUD.bundle */; };
 		77A8398B1AE7774D00B93420 /* UIImage+SZBundleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8398A1AE7774D00B93420 /* UIImage+SZBundleImage.m */; };
+		77B9B2D61AE7A93300C948ED /* SZChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B9B2D51AE7A93300C948ED /* SZChartViewController.m */; };
 		77DD45531AE4CF0E005DA571 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45521AE4CF0E005DA571 /* main.m */; };
 		77DD45561AE4CF0E005DA571 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD45551AE4CF0E005DA571 /* AppDelegate.m */; };
 		77DD455C1AE4CF0E005DA571 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DD455A1AE4CF0E005DA571 /* Main.storyboard */; };
@@ -209,6 +210,8 @@
 		77A839861AE7746A00B93420 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		77A839891AE7774D00B93420 /* UIImage+SZBundleImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SZBundleImage.h"; sourceTree = "<group>"; };
 		77A8398A1AE7774D00B93420 /* UIImage+SZBundleImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SZBundleImage.m"; sourceTree = "<group>"; };
+		77B9B2D41AE7A93300C948ED /* SZChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZChartViewController.h; sourceTree = "<group>"; };
+		77B9B2D51AE7A93300C948ED /* SZChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZChartViewController.m; sourceTree = "<group>"; };
 		77DD454D1AE4CF0E005DA571 /* SZGuildSteward.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SZGuildSteward.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DD45511AE4CF0E005DA571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77DD45521AE4CF0E005DA571 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -488,6 +491,8 @@
 				772E6F051AE79264002AFCFB /* SZDirectionViewController.m */,
 				772E6F071AE79749002AFCFB /* SZDirectionDetailViewController.h */,
 				772E6F081AE79749002AFCFB /* SZDirectionDetailViewController.m */,
+				77B9B2D41AE7A93300C948ED /* SZChartViewController.h */,
+				77B9B2D51AE7A93300C948ED /* SZChartViewController.m */,
 			);
 			path = "分路";
 			sourceTree = "<group>";
@@ -762,6 +767,7 @@
 				77DD45AD1AE50D75005DA571 /* SZUser.m in Sources */,
 				77A839821AE772CD00B93420 /* UITableView+SZLineHidden.m in Sources */,
 				77DD458C1AE4EB19005DA571 /* SZSquad.m in Sources */,
+				77B9B2D61AE7A93300C948ED /* SZChartViewController.m in Sources */,
 				77DD45561AE4CF0E005DA571 /* AppDelegate.m in Sources */,
 				77A8398B1AE7774D00B93420 /* UIImage+SZBundleImage.m in Sources */,
 				77E95E141AE74E8D0016E59C /* SZTextFieldTableViewCell.m in Sources */,
