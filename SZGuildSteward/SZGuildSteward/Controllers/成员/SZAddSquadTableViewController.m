@@ -33,9 +33,21 @@
     if (!_heroArray) {
         _heroArray = [[NSMutableArray alloc] init];
     }
-    
-    direction = 0;
-    combat = 0;
+    if (_isEdit) {
+        direction = _squad.direction;
+        combat = _squad.combat;
+        
+        NSArray *arr = [_squad.heroes componentsSeparatedByString:@","];
+        for (int i = 0; i < 5; i++) {
+            if (i < arr.count) {
+                SZHero *hero = [SZHero find:@"heroid == %@",arr[i]];
+                [_heroArray addObject:hero];
+            }
+        }
+    } else {
+        direction = 0;
+        combat = 0;
+    }
 }
 
 - (void)doneAction
@@ -51,24 +63,55 @@
         return;
     }
     
-    SZSquad *squad = [SZSquad create];
-    squad.user = _user;
-    squad.combat = combat;
-    squad.direction = direction;
-    
-    if (_heroArray.count > 0) {
-        NSMutableArray *arr = [[NSMutableArray alloc] init];
-        for (SZHero *hero in _heroArray) {
-            [arr addObject:hero.heroid];
+    if (_isEdit) {
+        NSInteger delta = combat - _squad.combat;
+        
+        _squad.user = _user;
+        _squad.combat = combat;
+        _squad.direction = direction;
+        
+        if (_heroArray.count > 0) {
+            NSMutableArray *arr = [[NSMutableArray alloc] init];
+            BOOL hasPA = NO;
+            for (SZHero *hero in _heroArray) {
+                [arr addObject:hero.heroid];
+                if ([hero.heroid isEqualToString:@"tmp_54829a22"]) {
+                    hasPA = YES;
+                }
+            }
+            NSString *heros = [arr componentsJoinedByString:@","];
+            _squad.heroes = heros;
+            _squad.hasPA = hasPA;
         }
-        NSString *heros = [arr componentsJoinedByString:@","];
-        squad.heroes = heros;
+        [_squad save];
+        
+        _user.totalCombat += delta;
+        [_user save];
+    } else {
+        SZSquad *squad = [SZSquad create];
+        squad.user = _user;
+        squad.combat = combat;
+        squad.direction = direction;
+        
+        if (_heroArray.count > 0) {
+            NSMutableArray *arr = [[NSMutableArray alloc] init];
+            BOOL hasPA = NO;
+            for (SZHero *hero in _heroArray) {
+                [arr addObject:hero.heroid];
+                if ([hero.heroid isEqualToString:@"tmp_54829a22"]) {
+                    hasPA = YES;
+                }
+            }
+            NSString *heros = [arr componentsJoinedByString:@","];
+            squad.heroes = heros;
+            squad.hasPA = hasPA;
+        }
+        [squad save];
+        
+        _user.totalCombat += combat;
+        [_user save];
     }
-    [squad save];
     
-    _user.totalCombat += combat;
-//    [_user addSquadsObject:squad];
-    [_user save];
     
     !_successBlock?:_successBlock(_user);
     
@@ -104,6 +147,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         SZTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SZTextFieldTableViewCell"];
+        [cell.textField setText:[NSString stringWithFormat:@"%@",@(combat)]];
         return cell;
     } else if (indexPath.row == 1) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
@@ -121,7 +165,7 @@
                 SZHero *hero = [_heroArray objectAtIndex:i];
                 [imageView setImage:[UIImage imageNamed:hero.imageName]];
             } else {
-                [imageView setImage:[UIImage imageNamed:@""]];
+                [imageView setImage:[UIImage new]];
             }
         }
         return cell;

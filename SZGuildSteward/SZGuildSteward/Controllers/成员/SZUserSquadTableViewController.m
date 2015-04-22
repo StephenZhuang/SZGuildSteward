@@ -81,7 +81,8 @@
     SZSquad *squad = [_squadArray objectAtIndex:indexPath.row];
     if (squad.heroes.length > 0) {
         SZSquadTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageCell"];
-        [cell.titleLabel setText:_user.name];
+        NSArray *directionArray = @[@"未分配",@"上路",@"中路",@"下路"];
+        [cell.titleLabel setText:directionArray[squad.direction]];
         [cell.contentLabel setText:[NSString stringWithFormat:@"战斗力 %@",@(squad.combat)]];
         NSArray *arr = [squad.heroes componentsSeparatedByString:@","];
         for (int i = 0; i < 5; i++) {
@@ -90,7 +91,7 @@
                 SZHero *hero = [SZHero find:@"heroid == %@",arr[i]];
                 [imageView setImage:[UIImage imageNamed:hero.imageName]];
             } else {
-                [imageView setImage:[UIImage imageNamed:@""]];
+                [imageView setImage:[UIImage new]];
             }
         }
         return cell;
@@ -146,6 +147,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    __weak __typeof(&*self)weakSelf = self;
+    SZSquad *squad = [_squadArray objectAtIndex:indexPath.row];
+    SZAddSquadTableViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SZAddSquadTableViewController"];
+    vc.isEdit = YES;
+    vc.user = _user;
+    vc.squad = squad;
+    vc.successBlock = ^(SZUser *user) {
+        weakSelf.user = user;
+        [weakSelf loadData];
+    };
+    [self.navigationController pushViewController:vc animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

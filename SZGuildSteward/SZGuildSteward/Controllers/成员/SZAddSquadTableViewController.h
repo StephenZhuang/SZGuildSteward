@@ -14,9 +14,12 @@
     NSInteger direction;
     NSInteger combat;
 }
+
 @property (nonatomic , strong) SZUser *user;
-@property (nonatomic , strong) NSMutableArray *heroArray;
+//edit
 @property (nonatomic , assign) BOOL isEdit;
 @property (nonatomic , strong) SZSquad *squad;
+
 @property (nonatomic , copy) void (^successBlock)(SZUser *user);
+@property (nonatomic , strong) NSMutableArray *heroArray;
 @end
